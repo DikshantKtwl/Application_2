@@ -1,12 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+// In App.js in a new project
 
-const App = () => {
+import * as React from 'react';
+import { AuthProvider } from './context/AuthContext';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppNav from './navigation/AppNav';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
-  )
+    <AuthProvider>
+    <AppNav/>
+    </AuthProvider>
+   
+  );
 }
-
-export default App
